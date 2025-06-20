@@ -33,18 +33,32 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses =
     "inline-flex items-center justify-center font-medium gap-2 rounded-lg transition focus:outline-none";
 
+  // const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
+  //   primary:
+  //     "bg-[#FF5A00] text-white hover:opacity-90 disabled:opacity-50 dark:bg-[#FF5A00] dark:white-[#111e4f]",
+  //   secondary:
+  //     "bg-[#003366] text-white hover:opacity-90 disabled:opacity-50 dark:bg-[#003366] dark:text-white",
+  //   outline:
+  //     "border border-[#e6e6e6] text-[#111e4f] hover:bg-[#f5f5f5] hover:text[#111e4f] disabled:opacity-50 dark:border-[#ffffff1a] dark:text-[#111e4f] dark:hover:bg-[#4a4a6a]",
+  //   destructive:
+  //     "bg-[#dc2626] text-white hover:opacity-90 disabled:opacity-50 dark:bg-[#b91c1c] dark:text-white",
+  //   ghost:
+  //     "bg-transparent text-[#2b2b2b] hover:bg-[#f5f5f5] disabled:opacity-50 dark:text-white dark:hover:bg-[#4a4a6a]",
+  // };
+
   const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
-    primary:
-      "bg-[#fcd116] text-[#111e4f] hover:opacity-90 disabled:opacity-50 dark:bg-[#fcd116] dark:white-[#111e4f]",
-    secondary:
-      "bg-[#3a0ca3] text-white hover:opacity-90 disabled:opacity-50 dark:bg-[#3a0ca3] dark:text-white",
-    outline:
-      "border border-[#e6e6e6] text-[#111e4f] hover:bg-[#f5f5f5] hover:text[#111e4f] disabled:opacity-50 dark:border-[#ffffff1a] dark:text-[#111e4f] dark:hover:bg-[#4a4a6a]",
-    destructive:
-      "bg-[#dc2626] text-white hover:opacity-90 disabled:opacity-50 dark:bg-[#b91c1c] dark:text-white",
-    ghost:
-      "bg-transparent text-[#2b2b2b] hover:bg-[#f5f5f5] disabled:opacity-50 dark:text-white dark:hover:bg-[#4a4a6a]",
-  };
+  primary:
+    "bg-[#1E3A8A] text-white hover:opacity-90 disabled:opacity-50 dark:bg-[#1E3A8A] dark:text-white",
+  secondary:
+    "bg-[#F97316] text-white hover:opacity-90 disabled:opacity-50 dark:bg-[#F97316] dark:text-white",
+  outline:
+    "border border-[#e6e6e6] text-[#1E3A8A] hover:bg-[#f5f5f5] hover:text-[#1E3A8A] disabled:opacity-50 dark:border-[#ffffff1a] dark:text-[#1E3A8A] dark:hover:bg-[#334155]",
+  destructive:
+    "bg-[#dc2626] text-white hover:opacity-90 disabled:opacity-50 dark:bg-[#b91c1c] dark:text-white",
+  ghost:
+    "bg-transparent text-[#2b2b2b] hover:bg-[#f5f5f5] disabled:opacity-50 dark:text-white dark:hover:bg-[#4a4a6a]",
+};
+
 
   return (
     <button

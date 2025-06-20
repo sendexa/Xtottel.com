@@ -257,7 +257,7 @@ export function ExaHeader() {
             onClick={closeAllMenus}
           >
             <Image
-              src="/logos/exaweb.png"
+              src="/logos/xtottel-logo.png"
               width={170}
               height={125}
               alt="Sendexa Logo"
@@ -303,91 +303,93 @@ export function ExaHeader() {
                   </motion.div>
 
                   {/* Desktop Mega Menu */}
-                  {item.subLinks && (
-                    <AnimatePresence>
-                      {openSubMenu === item.name && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          transition={{
-                            type: "spring",
-                            damping: 20,
-                            stiffness: 300,
-                          }}
-                          className="absolute left-0 mt-1 w-[36rem] bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-xl shadow-2xl py-4 z-50 border border-gray-200/80 dark:border-gray-700/80"
-                        >
-                          <div className="grid grid-cols-2 gap-4 px-6">
-                            {item.subLinks.map((subLink) => (
-                              <motion.div
-                                key={subLink.name}
-                                whileHover={{
-                                  x: 5,
-                                  transition: {
-                                    type: "spring",
-                                    stiffness: 300,
-                                  },
-                                }}
-                              >
-                                <Link
-                                  href={subLink.href}
-                                  className={`block p-3 rounded-lg transition-all ${
-                                    subLink.cta
-                                      ? // ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500"
-                                        "bg-gradient-to-r from-[#a08721] to-[#16335c] text-white hover:from-[#a08721]/90 hover:to-purple-500"
-                                      : pathname === subLink.href
-                                        ? "bg-blue-50 dark:bg-gray-800"
-                                        : "hover:bg-gray-50 dark:hover:bg-gray-800/50"
-                                  }`}
-                                  onClick={closeAllMenus}
-                                >
-                                  <div className="flex items-start">
-                                    {/* Icon container with conditional background */}
-                                    <div
-                                      className={`flex-shrink-0 mr-3 rounded-lg p-2 ${
-                                        subLink.cta
-                                          ? "bg-white/20"
-                                          : subLink.color
-                                      }`}
-                                    >
-                                      {subLink.icon}
-                                    </div>
+{item.subLinks && (
+  <AnimatePresence>
+    {openSubMenu === item.name && (
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 10 }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 300,
+        }}
+        className="absolute left-0 mt-1 w-[36rem] bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-xl shadow-2xl py-4 z-50 border border-gray-200/80 dark:border-gray-700/80"
+      >
+        <div className="grid grid-cols-2 gap-4 px-6">
+          {item.subLinks.map((subLink) => (
+            <motion.div
+              key={subLink.name}
+              whileHover={{
+                x: 5,
+                transition: {
+                  type: "spring",
+                  stiffness: 300,
+                },
+              }}
+            >
+              <Link
+                href={subLink.href}
+                onClick={closeAllMenus}
+                className={`block p-3 rounded-lg transition-all ${
+                  subLink.cta
+                    ? "bg-gradient-to-r from-[#F97316] to-[#1E3A8A] text-white hover:from-[#f97316cc] hover:to-[#1E3A8Acc]"
+                    : pathname === subLink.href
+                    ? "bg-blue-50 dark:bg-gray-800"
+                    : "hover:bg-gray-50 dark:hover:bg-gray-800/50"
+                }`}
+              >
+                <div className="flex items-start gap-3">
+                  {/* Icon Container */}
+                  <div
+                    className={`flex-shrink-0 rounded-lg p-2 ${
+                      subLink.cta ? "bg-white/20" : subLink.color
+                    }`}
+                  >
+                    {subLink.icon}
+                  </div>
 
-                                    {/* Text content: title and description */}
-                                    <div>
-                                      <div
-                                        className={`font-medium ${
-                                          subLink.cta
-                                            ? "text-white"
-                                            : "text-gray-900 dark:text-white"
-                                        }`}
-                                      >
-                                        {subLink.name}
-                                      </div>
-                                      <div
-                                        className={`text-xs mt-1 ${
-                                          subLink.cta
-                                            ? "text-white/80"
-                                            : "text-gray-500 dark:text-gray-400"
-                                        }`}
-                                      >
-                                        {subLink.description}
-                                      </div>
-                                    </div>
+                  {/* Text Content */}
+                  <div className="flex-1">
+                    <div
+                      className={`font-medium ${
+                        subLink.cta
+                          ? "text-white"
+                          : "text-gray-900 dark:text-white"
+                      }`}
+                    >
+                      {subLink.name}
+                    </div>
+                    {subLink.description && (
+                      <div
+                        className={`text-xs mt-1 ${
+                          subLink.cta
+                            ? "text-white/80"
+                            : "text-gray-500 dark:text-gray-400"
+                        }`}
+                      >
+                        {subLink.description}
+                      </div>
+                    )}
+                  </div>
 
-                                    {/* Optional CTA arrow icon aligned to the right */}
-                                    {subLink.cta && (
-                                      <ArrowRight className="ml-auto w-4 h-4 opacity-80" />
-                                    )}
-                                  </div>
-                                </Link>
-                              </motion.div>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                  {/* CTA Arrow Icon */}
+                  {subLink.cta && (
+                    <ArrowRight className="ml-auto w-4 h-4 opacity-80" />
                   )}
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+)}
+
+
+                
                 </div>
               ) : null
             )}
@@ -464,7 +466,7 @@ export function ExaHeader() {
                   onClick={closeAllMenus}
                 >
                   <Image
-                    src="/logos/exaweb.png"
+                    src="/logos/xtottel-logo.png"
                     width={170}
                     height={125}
                     alt="Sendexa Logo"
@@ -511,69 +513,73 @@ export function ExaHeader() {
                         )}
                       </div>
 
-                      {/* Mobile Submenu - Updated to match working example */}
-                      {item.subLinks && (
-                        <AnimatePresence>
-                          {openSubMenu === item.name && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.2 }}
-                              className="pl-4 ml-4 border-l-2 border-gray-200 dark:border-gray-700 overflow-hidden"
-                            >
-                              <div className="space-y-2 py-2">
-                                {item.subLinks.map((subLink) => (
-                                  <Link
-                                    key={subLink.name}
-                                    href={subLink.href}
-                                    className={`block p-3 rounded-lg transition-all ${
-                                      subLink.cta
-                                        ? "bg-gradient-to-r from-[#a08721] to-[#16335c] text-white"
-                                        : pathname === subLink.href
-                                          ? "bg-blue-50 dark:bg-gray-800"
-                                          : "hover:bg-gray-100 dark:hover:bg-gray-800"
-                                    }`}
-                                    onClick={closeAllMenus}
-                                  >
-                                    <div className="flex items-start">
-                                      <div
-                                        className={`flex-shrink-0 mr-3 rounded-lg p-2 ${
-                                          subLink.cta
-                                            ? "bg-white/20"
-                                            : subLink.color
-                                        }`}
-                                      >
-                                        {subLink.icon}
-                                      </div>
-                                      <div>
-                                        <div
-                                          className={`font-medium ${
-                                            subLink.cta
-                                              ? "text-white"
-                                              : "text-gray-900 dark:text-white"
-                                          }`}
-                                        >
-                                          {subLink.name}
-                                        </div>
-                                        <div
-                                          className={`text-xs mt-1 ${
-                                            subLink.cta
-                                              ? "text-white/80"
-                                              : "text-gray-500 dark:text-gray-400"
-                                          }`}
-                                        >
-                                          {subLink.description}
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </Link>
-                                ))}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      )}
+                     {/* Mobile Submenu */}
+{item.subLinks && (
+  <AnimatePresence>
+    {openSubMenu === item.name && (
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: "auto" }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.2 }}
+        className="pl-4 ml-4 border-l-2 border-gray-200 dark:border-gray-700 overflow-hidden"
+      >
+        <div className="space-y-2 py-2">
+          {item.subLinks.map((subLink) => (
+            <Link
+              key={subLink.name}
+              href={subLink.href}
+              onClick={closeAllMenus}
+              className={`block p-3 rounded-lg transition-all ${
+                subLink.cta
+                  ? "bg-gradient-to-r from-[#F97316] to-[#1E3A8A] text-white hover:from-[#f97316cc] hover:to-[#1e3a8acc]"
+                  : pathname === subLink.href
+                  ? "bg-blue-50 dark:bg-gray-800"
+                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
+              }`}
+            >
+              <div className="flex items-start gap-3">
+                {/* Icon container */}
+                <div
+                  className={`flex-shrink-0 rounded-lg p-2 ${
+                    subLink.cta ? "bg-white/20" : subLink.color
+                  }`}
+                >
+                  {subLink.icon}
+                </div>
+
+                {/* Text content */}
+                <div>
+                  <div
+                    className={`font-medium ${
+                      subLink.cta
+                        ? "text-white"
+                        : "text-gray-900 dark:text-white"
+                    }`}
+                  >
+                    {subLink.name}
+                  </div>
+                  {subLink.description && (
+                    <div
+                      className={`text-xs mt-1 ${
+                        subLink.cta
+                          ? "text-white/80"
+                          : "text-gray-500 dark:text-gray-400"
+                      }`}
+                    >
+                      {subLink.description}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+)}
+
                     </div>
                   ))}
                 </nav>

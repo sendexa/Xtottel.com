@@ -73,21 +73,21 @@ export const ExaFooter = () => {
 
   const contactInfo = [
     {
-      icon: <FaPhoneAlt className="text-[#fcd116] mr-3" />,
+      icon: <FaPhoneAlt className="text-[#1E3A8A] mr-3" />,
       text: "Customer Care: 0800 800 000",
       href: "tel:+233551196764",
     },
     {
-      icon: <FaEnvelope className="text-[#fcd116] mr-3" />,
+      icon: <FaEnvelope className="text-[#1E3A8A] mr-3" />,
       text: "help@xtottel.com",
       href: "mailto:help@xtottel.com",
     },
     {
-      icon: <FaMapMarkerAlt className="text-[#fcd116] mr-3" />,
+      icon: <FaMapMarkerAlt className="text-[#1E3A8A] mr-3" />,
       text: "Accra Digital Center, Ring Road",
     },
     {
-      icon: <FaClock className="text-[#fcd116] mr-3" />,
+      icon: <FaClock className="text-[#1E3A8A] mr-3" />,
       text: "Mon-Fri: 8AM-6PM | Sat: 9AM-2PM",
     },
   ];
@@ -134,15 +134,15 @@ export const ExaFooter = () => {
               viewport={{ once: true }}
               className="lg:col-span-2 space-y-6"
             >
-              {/* <Link href="/" className="flex items-center mb-4">
+              <Link href="/" className="flex items-center mb-4">
                 <Image
-                  src="/logos/xtottel-white.png"
+                  src="/logos/xtottel-logo-white.png"
                   width={180}
                   height={80}
                   alt="Xtottel Logo"
                   className="hover:opacity-90 transition-opacity"
                 />
-              </Link> */}
+              </Link>
 
               <motion.p
                 className="text-gray-400 mb-6 max-w-sm"
@@ -168,7 +168,7 @@ export const ExaFooter = () => {
                     {item.href ? (
                       <Link 
                         href={item.href}
-                        className="text-gray-400 hover:text-[#fcd116] transition-colors text-sm"
+                        className="text-gray-400 hover:text-[#1E3A8A] transition-colors text-sm"
                       >
                         {item.text}
                       </Link>
@@ -198,7 +198,7 @@ export const ExaFooter = () => {
                       transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.9 }}
-                    className="p-2 rounded-full bg-gray-800 hover:bg-[#fcd116] hover:text-gray-900 shadow-sm transition-all"
+                    className="p-2 rounded-full bg-gray-800 hover:bg-[#1E3A8A] hover:text-gray-900 shadow-sm transition-all"
                     aria-label={social.name}
                   >
                     <social.icon className="h-5 w-5" />
@@ -226,10 +226,10 @@ export const ExaFooter = () => {
                       <li key={link.name}>
                         <Link
                           href={link.href}
-                          className="text-sm text-gray-400 hover:text-[#fcd116] transition-colors flex items-center group"
+                          className="text-sm text-gray-400 hover:text-[#1E3A8A] transition-colors flex items-center group"
                         >
                           <motion.span
-                            whileHover={{ x: 5, color: "#fcd116" }}
+                            whileHover={{ x: 5, color: "#1E3A8A" }}
                             transition={{ type: "spring", stiffness: 300 }}
                             className="inline-flex items-center gap-1"
                           >
@@ -238,7 +238,7 @@ export const ExaFooter = () => {
                             <motion.span
                               initial={{ opacity: 0, width: 0 }}
                               whileHover={{ opacity: 1, width: "0.5rem" }}
-                              className="block h-px bg-[#fcd116]"
+                              className="block h-px bg-[#1E3A8A]"
                             />
                           </motion.span>
                         </Link>
@@ -271,7 +271,7 @@ export const ExaFooter = () => {
               aria-label={`Copyright ${currentYear} Xtottel`}
             >
               &copy; {currentYear}{" "}
-              <span className="font-medium text-[#fcd116] transition-colors duration-300">
+              <span className="font-medium text-[#1E3A8A] transition-colors duration-300">
                 Xtottel LLC.
               </span>
               . All rights reserved.
