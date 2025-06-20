@@ -9,149 +9,196 @@ import Image from "next/image";
 import { Container } from "./Container";
 
 import {
-  MessageSquareText,
-  LockKeyhole,
-  MailPlus,
-  CodeXml,
-  Users,
   Server,
-  FileText,
-  HelpCircle,
   Briefcase,
-  MailOpen,
   AlignRight,
   ArrowRight,
   ChevronDown,
   ChevronUp,
   X,
+  MapPin,
+  Phone,
+  Activity,
+  Building2,
+  Headset,
+  HelpCircle,
+  Store,
+  TrendingUp,
+  Wifi,
+  Zap,
+  IdCard,
+  UserRound,
 } from "lucide-react";
 
 export const navItems = [
-  {
-    name: "Products",
-    href: "#",
-    subLinks: [
-      {
-        name: "SMS API",
-        href: "/products/sms",
-        description:
-          "Deliver mission-critical SMS with local routing and real-time analytics.",
-        icon: <MessageSquareText className="w-5 h-5" />,
-        color:
-          "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300",
-        cta: false,
-      },
-      {
-        name: "OTP API",
-        href: "/products/otp",
-        description:
-          "Protect logins, payments, and signups with instant OTP via SMS or Email.",
-        icon: <LockKeyhole className="w-5 h-5" />,
-        color:
-          "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300",
-        cta: false,
-      },
-      {
-        name: "Email API",
-        href: "/products/email",
-        description:
-          "Send high-inbox-rate transactional and bulk emails at scale.",
-        icon: <MailPlus className="w-5 h-5" />,
-        color:
-          "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300",
-        cta: false,
-      },
-      {
-        name: "SMPP Gateway",
-        href: "/products/smpp",
-        description:
-          "Integrate directly via SMPP to access our carrier-grade SMS routes.",
-        icon: <Server className="w-5 h-5" />,
-        color:
-          "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
-        cta: true,
-      },
-    ],
-  },
-  {
-    name: "Developers",
-    href: "https://developers.sendexa.co/",
-  },
-
   {
     name: "Services",
     href: "#",
     subLinks: [
       {
-        name: "Custom Software & Portals",
-        href: "/services/software-development/",
-        description:
-          "Tailored comms systems for schools, fintech, and logistics.",
-        icon: <CodeXml className="w-5 h-5" />,
+        name: "Mobile Plans",
+        href: "/services/mobile",
+        description: "Voice, data & SMS bundles for individuals and businesses",
+        icon: <Phone className="w-5 h-5" />,
         color:
-          "bg-purple-50 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+          "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
         cta: false,
       },
       {
-        name: "Reseller Services",
-        href: "/services/reseller/",
-        description: "White-label our SMS, Email & OTP to grow your business.",
-        icon: <Users className="w-5 h-5" />,
+        name: "Home Internet",
+        href: "/services/broadband",
+        description: "High-speed fiber and wireless broadband solutions",
+        icon: <Wifi className="w-5 h-5" />,
         color:
-          "bg-teal-50 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300",
+          "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300",
+        cta: false,
+      },
+      {
+        name: "Business Solutions",
+        href: "/services/business",
+        description:
+          "Enterprise connectivity, cloud PBX, and unified communications",
+        icon: <Briefcase className="w-5 h-5" />,
+        color:
+          "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300",
+        cta: false,
+      },
+      {
+        name: "IoT & M2M",
+        href: "/services/iot",
+        description: "Smart connectivity for devices and machines",
+        icon: <Server className="w-5 h-5" />,
+        color:
+          "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300",
+        cta: true,
+      },
+    ],
+  },
+  {
+    name: "Coverage",
+    href: "#",
+    subLinks: [
+      {
+        name: "Network Map",
+        href: "/coverage/map",
+        description: "Interactive map of our coverage areas",
+        icon: <MapPin className="w-5 h-5" />,
+        color:
+          "bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300",
+        cta: false,
+      },
+      {
+        name: "5G Rollout",
+        href: "/coverage/5g",
+        description: "Our next-generation network deployment plan",
+        icon: <Zap className="w-5 h-5" />,
+        color:
+          "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300",
+        cta: false,
+      },
+      {
+        name: "Network Status",
+        href: "/coverage/status",
+        description: "Real-time network performance and outages",
+        icon: <Activity className="w-5 h-5" />,
+        color: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300",
         cta: false,
       },
     ],
   },
-
   {
-    name: "Pricing",
-    href: "/pricing",
-  },
-
-  {
-    name: "Resources",
+    name: "Support",
     href: "#",
     subLinks: [
       {
-        name: "Blog & Insights",
-        href: "/blog",
-        description: "Tips, product news, and industry insights.",
-        icon: <FileText className="w-5 h-5" />,
+        name: "Help Center",
+        href: "/support/help",
+        description: "FAQs and troubleshooting guides",
+        icon: <HelpCircle className="w-5 h-5" />,
         color:
-          "bg-orange-50 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300",
+          "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300",
         cta: false,
       },
       {
-        name: "FAQs & Help Center",
-        href: "/faqs",
-        description: "Browse frequently asked questions and answers.",
-        icon: <HelpCircle className="w-5 h-5" />,
+        name: "SIM Registration",
+        href: "/support/sim-registration",
+        description: "Register your SIM online or book a center visit",
+        icon: <IdCard className="w-5 h-5" />,
         color:
-          "bg-purple-50 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+          "bg-lime-100 text-lime-800 dark:bg-lime-900/30 dark:text-lime-300",
+        cta: false,
+      },
+      {
+        name: "Contact Us",
+        href: "/support/contact",
+        description: "24/7 customer care channels",
+        icon: <Headset className="w-5 h-5" />,
+        color:
+          "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300",
+        cta: false,
+      },
+      {
+        name: "Retail Stores",
+        href: "/support/stores",
+        description: "Find our service centers and kiosks",
+        icon: <Store className="w-5 h-5" />,
+        color:
+          "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300",
+        cta: false,
+      },
+    ],
+  },
+  {
+    name: "About Us",
+    href: "#",
+    subLinks: [
+      {
+        name: "Our Company",
+        href: "/about/company",
+        description: "Mission, vision and leadership",
+        icon: <Building2 className="w-5 h-5" />,
+        color:
+          "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300",
+        cta: false,
+      },
+      {
+        name: "Leadership",
+        href: "/about/leadership",
+        description: "Meet the team behind Xtottel",
+        icon: <UserRound className="w-5 h-5" />,
+        color: "bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300",
         cta: false,
       },
       {
         name: "Careers",
-        href: "/careers",
-        description: "Join us in building Africa’s comms infrastructure.",
+        href: "/about/careers",
+        description: "Join our growing team",
         icon: <Briefcase className="w-5 h-5" />,
         color:
-          "bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300",
+          "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
         cta: true,
       },
       {
-        name: "Contact Us",
-        href: "/contact",
-        description: "Talk to our team — we’re here to help.",
-        icon: <MailOpen className="w-5 h-5" />,
+        name: "Investors",
+        href: "/about/investors",
+        description: "Financial reports and shareholder information",
+        icon: <TrendingUp className="w-5 h-5" />,
         color:
-          "bg-rose-50 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300",
+          "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300",
         cta: false,
       },
     ],
   },
+  //   {
+  //   name: "Newsroom",
+  //   href: "/newsroom",
+  // },
+  {
+    name: "Shop",
+    href: "/shop",
+  },
 ];
+
 
 export function ExaHeader() {
   const pathname = usePathname();
@@ -350,22 +397,22 @@ export function ExaHeader() {
           <div className="hidden lg:flex items-center gap-4">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                variant="outline"
+                variant="primary"
                 className="gap-2"
-                onClick={() =>
-                  (window.location.href = "https://app.sendexa.co/login")
-                }
+                onClick={() => (window.location.href = "/get-sim")}
               >
-                <span>Login</span>
+                <span>Get a SIM</span>
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                variant="primary"
+                variant="secondary"
                 className="gap-2"
-                onClick={() => (window.location.href = "https://app.sendexa.co/signup")}
+                onClick={() =>
+                  (window.location.href = "https://my.xtottel.com")
+                }
               >
-                <span>Sign Up</span>
+                <span>My Xtottel</span>
               </Button>
             </motion.div>
           </div>
@@ -537,14 +584,14 @@ export function ExaHeader() {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Button
-                      variant="outline"
+                      variant="primary"
                       className="w-full gap-2"
                       onClick={() => {
                         closeAllMenus();
-                        window.location.href = "https://app.sendexa.co/login";
+                        window.location.href = "/get-sim";
                       }}
                     >
-                      <span>Login</span>
+                      <span>Get a SIM</span>
                     </Button>
                   </motion.div>
 
@@ -553,14 +600,14 @@ export function ExaHeader() {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Button
-                      variant="primary"
+                      variant="secondary"
                       className="w-full gap-2"
                       onClick={() => {
                         closeAllMenus();
-                        window.location.href = "https://app.sendexa.co/signup";
+                        window.location.href = "https://my.xtottel.com";
                       }}
                     >
-                      <span>Sign Up</span>
+                      <span>My Xtottel</span>
                     </Button>
                   </motion.div>
                 </div>

@@ -1,77 +1,94 @@
+
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "./Container";
 import Image from "next/image";
-
 import {
   FaFacebook,
   FaWhatsapp,
   FaYoutube,
   FaLinkedin,
-  FaGithub,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock,
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaSignal, FaWifi, FaMobile } from "react-icons/fa6";
 
 export const ExaFooter = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
     {
-      title: "Products",
+      title: "Services",
       links: [
-        { name: "SMS Messaging", href: "/products/sms" },
-        { name: "Email Makerting", href: "/products/email" },
-        { name: "Secure OTP API", href: "/products/otp" },
-        { name: "Payments & Wallets", href: "/products/payments" },
-        { name: "WhatsApp Business API", href: "/products/whatsapp" },
+        { name: "Mobile Plans", href: "/services/mobile", icon: <FaMobile className="inline mr-2" /> },
+        { name: "Home Internet", href: "/services/broadband", icon: <FaWifi className="inline mr-2" /> },
+        { name: "Business Solutions", href: "/services/business" },
+        { name: "IoT Connectivity", href: "/services/iot" },
+        { name: "5G Network", href: "/services/5g", icon: <FaSignal className="inline mr-2" /> },
       ],
     },
-
+    {
+      title: "Coverage",
+      links: [
+        { name: "Network Map", href: "/coverage/map", icon: <FaMapMarkerAlt className="inline mr-2" /> },
+        { name: "5G Rollout", href: "/coverage/5g" },
+        { name: "International Roaming", href: "/coverage/roaming" },
+        { name: "Network Status", href: "/status" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { name: "Help Center", href: "/support" },
+        { name: "Contact Us", href: "/contact" },
+        { name: "Store Locator", href: "/stores" },
+        { name: "Device Support", href: "/devices" },
+        { name: "Community Forum", href: "/community" },
+      ],
+    },
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "/about" },
-        { name: "Our Blog", href: "/blog" },
-        { name: "Contact Us", href: "/contact" },
-        { name: "Sendexa Cares", href: "https://cares.sendexa.co/" },
-        { name: "Leadership & Team", href: "/team" },
+        { name: "About Xtottel", href: "/about" },
+        { name: "Careers", href: "/careers" },
+        { name: "Investors", href: "/investors" },
+        { name: "Newsroom", href: "/news" },
+        { name: "Xtottel Foundation", href: "/foundation" },
       ],
     },
+    // {
+    //   title: "Legal",
+    //   links: [
+    //     { name: "Terms of Service", href: "/legal/terms" },
+    //     { name: "Privacy Policy", href: "/legal/privacy" },
+    //     { name: "Cookie Policy", href: "/legal/cookies" },
+    //     { name: "Acceptable Use", href: "/legal/aup" },
+    //     { name: "Compliance", href: "/legal/compliance" },
+    //   ],
+    // },
+  ];
+
+  const contactInfo = [
     {
-      title: "Resources",
-      links: [
-        { name: "Connect to APIs", href: "https://developers.sendexa.co/" },
-        { name: "Our Partners", href: "/partners" },
-        { name: "FAQs & Help", href: "/faqs" },
-        { name: "Tutorial Videos", href: "https://youtube.com/sendexa" },
-        { name: "System Status", href: "/status" },
-      ],
+      icon: <FaPhoneAlt className="text-[#fcd116] mr-3" />,
+      text: "Customer Care: 0800 800 000",
+      href: "tel:+233551196764",
     },
     {
-      title: "Legal",
-      links: [
-        {
-          name: "Terms of Service",
-          href: "/legal/terms",
-        },
-        {
-          name: "Privacy Policy",
-          href: "/legal/privacy",
-        },
-        {
-          name: "Cookie Policy",
-          href: "/legal/cookies",
-        },
-        {
-          name: "Acceptable Use",
-          href: "/legal/acceptable-use",
-        },
-        {
-          name: "Licenses",
-          href: "/legal/licenses",
-        },
-      ],
+      icon: <FaEnvelope className="text-[#fcd116] mr-3" />,
+      text: "help@xtottel.com",
+      href: "mailto:help@xtottel.com",
+    },
+    {
+      icon: <FaMapMarkerAlt className="text-[#fcd116] mr-3" />,
+      text: "Accra Digital Center, Ring Road",
+    },
+    {
+      icon: <FaClock className="text-[#fcd116] mr-3" />,
+      text: "Mon-Fri: 8AM-6PM | Sat: 9AM-2PM",
     },
   ];
 
@@ -79,24 +96,34 @@ export const ExaFooter = () => {
     {
       name: "Facebook",
       icon: FaFacebook,
-      href: "https://facebook.com/Sendexa",
+      href: "https://facebook.com/xtottel",
     },
-    { name: "Twitter", icon: FaXTwitter, href: "https://x.com/sendexaHQ" },
+    { 
+      name: "Twitter", 
+      icon: FaXTwitter, 
+      href: "https://x.com/xtottel" 
+    },
     {
-      name: "Linkedin",
+      name: "LinkedIn",
       icon: FaLinkedin,
-      href: "https://linkedin.com/company/sendexa",
+      href: "https://linkedin.com/company/xtottel",
     },
-    { name: "YouTube", icon: FaYoutube, href: "https://youtube.com/sendexa" },
-    { name: "WhatsApp", icon: FaWhatsapp, href: "https://wa.me/+233555539152" },
-
-    { name: "GitHub", icon: FaGithub, href: "https://github.com/sendexa" },
+    { 
+      name: "YouTube", 
+      icon: FaYoutube, 
+      href: "https://youtube.com/xtottel" 
+    },
+    { 
+      name: "WhatsApp", 
+      icon: FaWhatsapp, 
+      href: "https://wa.me/+233201234567" 
+    },
   ];
 
   return (
     <footer className="bg-gray-900 text-gray-100 border-t border-gray-800">
       <Container>
-        <div className="pt-8 pb-8">
+        <div className="pt-12 pb-8">
           {/* Main Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-16">
             {/* About */}
@@ -105,40 +132,59 @@ export const ExaFooter = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="lg:col-span-2 space-y-8"
+              className="lg:col-span-2 space-y-6"
             >
-              <Link href="/" className="flex items-center mb-2">
-                {" "}
+              {/* <Link href="/" className="flex items-center mb-4">
                 <Image
-                  src="/logos/exaweb.png"
-                  width={170}
-                  height={125}
-                  alt="Sendexa Logo"
+                  src="/logos/xtottel-white.png"
+                  width={180}
+                  height={80}
+                  alt="Xtottel Logo"
+                  className="hover:opacity-90 transition-opacity"
                 />
-                {/* <span className="text-2xl font-bold bg-gradient-to-r from-[#1a3cb8] to-pink-500 bg-clip-text text-transparent">
-                  Sendexa
-                </span> */}
-              </Link>
+              </Link> */}
 
               <motion.p
-                className="text-gray-400 mb-8 max-w-sm"
+                className="text-gray-400 mb-6 max-w-sm"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                {/* Africa&apos;s all-in-one messaging platform. Send SMS, email,
-                and voice messages — reliably, securely, and at scale. */}
-                Ghana&apos;s all-in-one platform for messaging and payments —
-                enabling businesses to send SMS, email, voice, and verification
-                messages, and accept payments seamlessly and securely.
+                Ghana&apos;s leading digital telecom provider, delivering innovative 
+                connectivity solutions for homes, businesses, and IoT applications 
+                nationwide.
               </motion.p>
+
+              {/* Contact Info */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="space-y-3"
+              >
+                {contactInfo.map((item, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="mt-1">{item.icon}</span>
+                    {item.href ? (
+                      <Link 
+                        href={item.href}
+                        className="text-gray-400 hover:text-[#fcd116] transition-colors text-sm"
+                      >
+                        {item.text}
+                      </Link>
+                    ) : (
+                      <span className="text-gray-400 text-sm">{item.text}</span>
+                    )}
+                  </div>
+                ))}
+              </motion.div>
 
               {/* Social Icons */}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="flex gap-4 mt-8"
+                transition={{ delay: 0.4 }}
+                className="flex gap-4 mt-6"
               >
                 {socialLinks.map((social) => (
                   <motion.a
@@ -152,17 +198,17 @@ export const ExaFooter = () => {
                       transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.9 }}
-                    className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 shadow-sm hover:shadow-blue-500/20 transition-all"
+                    className="p-2 rounded-full bg-gray-800 hover:bg-[#fcd116] hover:text-gray-900 shadow-sm transition-all"
+                    aria-label={social.name}
                   >
-                    <social.icon className="h-5 w-5 text-gray-300 hover:text-[#fcd116] transition-colors" />
+                    <social.icon className="h-5 w-5" />
                   </motion.a>
                 ))}
               </motion.div>
             </motion.div>
 
             {/* Footer Links */}
-
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 col-span-1 lg:col-span-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 col-span-1 lg:col-span-4">
               {footerLinks.map((section, index) => (
                 <motion.div
                   key={section.title}
@@ -187,11 +233,12 @@ export const ExaFooter = () => {
                             transition={{ type: "spring", stiffness: 300 }}
                             className="inline-flex items-center gap-1"
                           >
+                            {link.icon && link.icon}
                             {link.name}
                             <motion.span
                               initial={{ opacity: 0, width: 0 }}
                               whileHover={{ opacity: 1, width: "0.5rem" }}
-                              className="block h-px bg-blue-text-[#fcd116]"
+                              className="block h-px bg-[#fcd116]"
                             />
                           </motion.span>
                         </Link>
@@ -209,7 +256,7 @@ export const ExaFooter = () => {
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="border-t border-gray-800 my-6"
+            className="border-t border-gray-800 my-8"
           />
 
           {/* Final Bottom */}
@@ -221,31 +268,48 @@ export const ExaFooter = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
               className="text-sm text-gray-500"
-              aria-label={`Copyright ${currentYear} Sendexa, Inc.`}
+              aria-label={`Copyright ${currentYear} Xtottel`}
             >
               &copy; {currentYear}{" "}
-              <span className="font-medium text-[#fcd116] transition-colors duration-300 underline-offset-2">
-                Sendexa, LLC.
+              <span className="font-medium text-[#fcd116] transition-colors duration-300">
+                Xtottel LLC.
               </span>
               . All rights reserved.
+               {/* NCA License: TG-123456 */}
             </motion.p>
 
-            {/* Built with Love by Xtottel Ltd */}
+            {/* App Download Links */}
             <motion.div
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
-              className="text-sm text-gray-500 transition-all group"
+              className="flex gap-3"
             >
-              <p className="transition-all duration-300">
-                Built with <span className="text-red-500"> 💚</span> by{" "}
-                <span className="font-medium text-[#fcd116] group-hover:text-yellow-500 transition-colors duration-300">
-                  Xtottel Ltd
-                </span>
-              </p>
+              <Link 
+                href="#"
+                className="hover:opacity-90 transition-opacity"
+                aria-label="Download Xtottel App from Google Play"
+              >
+                <Image 
+                  src="/images/google-play-badge.png" 
+                  width={120} 
+                  height={40} 
+                  alt="Get on Google Play"
+                />
+              </Link>
+              <Link 
+                href="#"
+                className="hover:opacity-90 transition-opacity"
+                aria-label="Download Xtottel App from App Store"
+              >
+                <Image 
+                  src="/images/app-store-badge.png" 
+                  width={120} 
+                  height={40} 
+                  alt="Download on the App Store"
+                />
+              </Link>
             </motion.div>
           </div>
         </div>
